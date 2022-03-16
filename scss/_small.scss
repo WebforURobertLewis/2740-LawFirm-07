@@ -1,0 +1,316 @@
+/*for declaration, variable that incraments, SASS LOOPS*/ 
+
+//columns
+div.flexed{
+    display: flex; 
+    flex-wrap: wrap;}
+.column {padding: 0 $gutter;}
+main{
+@for $i from 1 through 12{
+    $w:($i/12)*100%;
+    .small-#{$i}{flex-basis: $w;}
+}
+}
+
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; max-width: 1200px;}
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
+
+/*----------- BODY --------------*/
+body {
+    font-size: 16px;
+    font-family: 'Dosis', sans-serif;
+    background-color: $primaryColor;
+}
+
+
+/*----------- HEADER --------------*/
+header#headerWrapper{
+    min-height:90px;
+    background-color: $primaryColor;
+}
+header :not(#navMenu, nav, nav ul, #burger, #burger span){
+    padding: .5rem 2%;
+    background-color: lighten($primaryColor, 10%);
+    color: $buttonColor;
+}
+ header h1 h2{
+     width: 100%;
+    margin: 0;
+
+}
+header{
+    border-top: rgb(25, 0, 255) 3px solid;
+
+}
+#headerWrapper{
+    background-color: lighten($primaryColor, 10%);
+    max-width: 75rem;
+header h1:not(h1.logoText, h1.phoneNumberTxt){
+    margin: 0;
+    text-align: center;
+    padding-top: 5%;
+}
+header h2 {
+    text-align: center;
+    margin: 0; 
+    font-weight: normal;}
+
+.logo{
+    margin-left: 0;
+    height: 78px;
+    margin-bottom: 23px;
+    
+}
+
+}
+    header h1.logoText{
+    margin-bottom: 0;
+    background-color: $primaryColor;
+    top:0;
+    margin: 0;
+    margin-left: 100px;
+    margin-top: -80px;
+    
+}
+.phoneNumberTxt{
+    text-align: right;
+    margin: 0;
+    display: none;
+}
+
+
+
+/*----------- NAVIGATION --------------*/
+nav { 
+    background-color: lighten($primaryColor,15%);
+
+    button{
+        position: absolute;
+        padding: .5rem;
+        background-color: transparent;
+        border: none;
+        font-size: 1.5rem;
+        top: 0;
+        right: 0;
+        color: $buttonColor;
+
+        }
+       
+        //toggle the hamburger menu and the close (X)
+        //hide one to show the other one, and when it is open, reverse them
+        button span:nth-child(1){display: block;}
+        button span:nth-child(2){display: none;}
+        button.classOpen span:nth-child(1){display:none} //dont show me the burger when it's open
+        button.classOpen span:nth-child(2){display: block;}//when it has a class of open, displays as a block
+        //end button
+
+    ul {
+    display: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    
+    }
+
+    ul.classOpen { //pulls from JavaScript
+        display: block; //opposite of none in ul{display:none}
+    }
+    ul li a {
+    display: block; //must be displayed as a block to apply padding
+    border-bottom: .1px solid #ffffffc7;
+    padding: .9rem 2vw;
+    font-size: .9rem;
+    padding-left: 1rem;
+    background-color: lighten($primaryColor, 80%);
+    text-decoration: none;
+    text-align: center;
+    }
+
+
+    ul li a:hover {
+    background-color: darken($primaryColor, 50%);
+    color: #fff;
+
+    }
+
+}
+nav ul#navMenu li:hover{
+    color: #fff;
+    background-color: lighten($primaryColor, 30%);
+    a:hover{
+        color: #fff;
+        background-color: lighten($primaryColor, 30%);
+    }
+}
+    nav ul li.active a{
+        background-color: lighten($primaryColor, 5%);
+        color: lighten($secondaryColor, 40%);
+    }
+    ul#navMenu li.active{
+        background-color: lighten($primaryColor,15%);
+        a{
+            background-color: lighten($primaryColor,15%);
+        }
+    
+    }
+/*----------- MAIN --------------*/
+section.background h1{
+    text-align: center;
+    padding-top: 5%;
+    margin-bottom: 0;
+}
+
+//Lawyer Card Start Here
+div.lawyerCard{
+    padding: 0 $gutter;
+    text-align: center;
+    figure{
+        background-color: $cardColor;
+        margin: 0;
+        border-radius: .2rem;
+        color: $txtColor;
+    }
+    h2{
+        padding-top: 5px;
+        margin-bottom: .5rem;
+    }
+    button{
+        bottom: 0;
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+        padding: .25rem;
+        border-radius: .5rem;
+        background-color: $buttonColor;
+        color: white;
+
+        width: 75%;
+    }
+    img{
+        margin: 0;
+        width: 100%;
+        height: auto;
+    }
+    
+}
+
+//blog start here
+
+.blogImg{    
+    contain: content;
+    text-align: center;
+    margin-top: 5%;
+    contain: content;
+    padding: 0;
+
+
+
+
+    img{
+    max-width: 550px;
+    width: 100%;
+    padding:0px;
+    margin: 0;
+    contain: content;
+
+    }
+    button{
+        width: 75%;
+        bottom: 0;
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+        padding: .25rem;
+        border-radius: .5rem;
+        background-color: $buttonColor;
+
+    }
+    div.column{
+        contain: content;
+        margin: 0;
+        contain: content;
+        padding: 0;
+        background-color: $cardColor;
+        color: $txtColor;
+        border: $primaryColor solid 5px;
+
+        p{
+            padding: 2vw;
+            text-align: left;
+            background-color: $cardColor;
+        }
+    }
+}
+div.blogImg{
+    width: 100%;
+
+}
+main .buttons2{
+    justify-content: center;
+    padding-top: 4%;
+
+    button{
+    width: 100%;
+    background-color: $buttonColor;
+    color: $txtColorBtn;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-radius: .5rem;
+    padding: 1rem;
+    font-size: larger;
+}
+}
+
+//Tip of the Day start here
+
+.tip{
+    background-color: $cardColor;
+    color: $txtColor;
+    border: $primaryColor solid 5px;
+    padding: $gutter;
+    a{
+        text-decoration: none;
+        color: $txtColorBtn;
+    }
+}
+//End Tip of the day
+
+//Icons
+div.social{
+    color: #fff;
+    text-align: center;
+    a{
+        padding: 5px;
+        text-decoration: none;
+        color:$secondaryColor;
+    }
+}
+div.social a:hover{
+    color: lighten($primaryColor,25%);
+}
+
+/*----------- FOOTER --------------*/
+footer {
+    padding: .5rem 2%;
+    text-align: center;
+    background-color: $secondaryColor;
+    color: white;
+}
+
+
+
+
+
+main section.background section.clip h2{
+    display: none;
+}
+
+/*----- Clearfix: Force an Element not to collapse -----*/
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+

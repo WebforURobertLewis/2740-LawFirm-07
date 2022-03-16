@@ -1,0 +1,123 @@
+main{
+@for $i from 1 through 12{
+    $w:($i/12)*100%;
+    .medium-#{$i}{flex-basis: $w;}
+}
+}
+/*----------- BODY --------------*/
+
+html{
+    max-width: 75rem;
+    margin: auto;
+
+}
+
+/*----------- HEADER --------------*/
+
+
+
+/*----------- NAVIGATION --------------*/
+
+nav {
+    max-width: 75rem;
+    contain: content;
+    right: 0%;
+    button{
+            display: none;
+            
+        }
+        ul#navMenu{
+            justify-content: right;
+            a{
+                border: none;
+            }
+        }
+    ul, ul.classOpen{
+            position: relative;
+            width: 100%;
+            display: flex;            
+            margin-bottom: 0;
+
+            li a{
+                    border: none;
+                    margin: 0;
+                    width: auto;
+            }
+            ul#navMenu{
+                    text-align: right;
+                    justify-content: right;
+                    contain: content;
+                    max-width: 75px;
+                    width: 25px;
+            }
+            ul#navMenu.classOpen{
+                    position: relative; //moves menu over to right when button is active
+            }
+    }
+
+}
+    nav ul li.active a{
+        background-color: lighten($primaryColor, 5%);
+        color: lighten($secondaryColor, 40%);
+        
+    }
+    ul#navMenu.classOpen{
+            z-index: 1;
+
+            top: 5%;
+        }
+        ul#navMenu{
+                position: relative;
+                border: none;
+
+        }
+
+
+
+//pushes menu to be above other page sections
+ul#navMenu.classOpen{
+
+    z-index: 1;
+    width: 100%;
+    right: 0;
+    top: 5%;
+}
+
+    nav ul li.active a{
+        background-color: lighten($primaryColor, 35%);
+        color: lighten($secondaryColor, 40%);
+    }
+
+    nav ul li {width: auto;}
+
+    nav ul li a{padding: .5rem 1rem;}
+
+
+/*----------- MAIN --------------*/
+
+  figure{
+    flex: none;
+    width: auto;
+    height: auto;
+    min-height: auto;
+
+
+  }
+  section.clip{
+      
+          
+          min-height: initial;
+          column-count: 2;
+          clear: both;
+      }
+  
+      .phoneNumberTxt{
+        text-align: right;
+        margin: 0;
+        display: block;
+        margin-top: -20px;
+    }
+//columns 2
+
+/*----------- FOOTER --------------*/
+    
